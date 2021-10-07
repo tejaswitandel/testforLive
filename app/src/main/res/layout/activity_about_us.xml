@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="aboutUsVM" type="com.application.app.modules.aboutus.data.viewmodel.AboutUsVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linear"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_50">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_48pxv"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:id="@+id/linear1"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/image"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_36pxv"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_width="@dimen/_36pxh" android:src="@drawable/img_icon_7"/>
+                <TextView android:gravity="top|center"
+                    android:id="@+id/txtAboutUs"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_50pxh"
+                    android:layout_weight="0.46"
+                    android:layout_width="0dp"
+                    android:text="@{aboutUsVM.aboutUsModel.txtAboutUs}"
+                    style="@style/textStylePoppinssemibold16" tools:text="@string/lbl_about_us"/>
+                <ImageView android:id="@+id/image1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_36pxv"
+                    android:layout_marginStart="@dimen/_50pxh"
+                    android:layout_width="@dimen/_36pxh" android:src="@drawable/img_group_7"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <ScrollView android:clipToPadding="false"
+            android:fillViewport="true" android:id="@+id/scrollView"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_25pxv"
+            android:layout_weight="1" android:layout_width="match_parent">
+            <LinearLayout android:id="@+id/linear2"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_24pxh"
+                android:layout_marginStart="@dimen/_24pxh"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylewhite_A700cornerRadius">
+                <TextView android:gravity="top|start"
+                    android:id="@+id/txtLoremIpsum"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24pxh"
+                    android:layout_marginTop="@dimen/_23pxv"
+                    android:layout_width="match_parent"
+                    android:text="@{aboutUsVM.aboutUsModel.txtLoremIpsum}"
+                    style="@style/textStylePoppinssemibold16_1" tools:text="@string/lbl_lorem_ipsum"/>
+                <TextView android:gravity="top|start"
+                    android:id="@+id/txtLoremIpsumDol"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_23pxh"
+                    android:layout_marginStart="@dimen/_23pxh"
+                    android:layout_marginTop="@dimen/_11pxv"
+                    android:layout_width="match_parent"
+                    android:text="@{aboutUsVM.aboutUsModel.txtLoremIpsumDol}"
+                    style="@style/textStylePoppinsregular14" tools:text="@string/msg_lorem_ipsum_dol"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>
